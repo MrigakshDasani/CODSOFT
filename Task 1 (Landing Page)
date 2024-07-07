@@ -1,0 +1,322 @@
+LANDING PAGE
+
+A landing page is an ideal web development project for beginners. It requires basic
+knowledge of HTML and CSS. Through this project, you'll learn to create columns, divide
+sections, arrange items, and add headers and footers. The most important aspect is
+unleashing your creativity to design an impressive page. Pay attention to alignments,
+padding, color palette, boxes, and other elements. Be mindful of CSS to avoid overlapping
+
+elements. In short, a landing page project allows you to apply HTML and CSS skills,
+encouraging your creativity while ensuring a visually appealing and user-friendly design.
+
+
+INDEX.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coffee Shop</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#menu">BestSellers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-container">
+            <div class="text-overlay">
+                <h1>Our Coffee Brand</h1>
+                <p>Experience the best coffee in town.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="service-item">
+            <img src="place.jpg" alt="place">
+            <p>Cozy Place</p>
+        </div>
+        <div class="service-item">
+            <img src="coffee-taste.jpg" alt="taste">
+            <p>Full Taste</p>
+        </div>
+        <div class="service-item">
+            <img src="feel-coffee.jpg" alt="coffee">
+            <p>Feel the Coffee</p>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <div class="team-item">
+            <img src="barista1.jpg" alt="team">
+            <h4>HARPER ANNE TAYLOR</h4>
+            <p>Owner</p>
+            <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula.
+            </p>
+        </div>
+        <div class="team-item">
+            <img src="barista2.jpg" alt="team">
+            <h4>ALEJANDRO MENDEZ</h4>
+            <p>Barista</p>
+            <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula.
+            </p>
+        </div>
+        <div class="team-item">
+            <img src="barista3.jpg" alt="team">
+            <h4>AVA MARIE BROWN</h4>
+            <p>Barista</p>
+            <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula
+                euripidis, hinc partem ei est. Eos ei nisl graecis vix.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="menu-row">
+            <div class="menu-item">
+                <img src="coldbrew.jpg" alt="menu item">
+                <p id = "heading" >Vietnamese Cold Brew</p>
+                <p>Vietnamese cold brew coffee is a variant of cold brew known for its use of sweetened condensed milk, which adds a creamy sweetness</p>
+            </div>
+            <div class="menu-item">
+                <img src="lattee.jpg" alt="menu item">
+                <p id = "heading" >Latte</p>
+                <p>A smooth blend of espresso and steamed milk, topped with a light layer of foam. Perfectly balanced
+                    for a
+                    creamy and rich coffee experience.</p>
+            </div>
+            <div class="menu-item">
+                <img src="cappuccino2.jpg" alt="menu item">
+                <p id = "heading" >Cappuccino</p>
+                <p>A classic Italian favorite made with equal parts espresso, steamed milk, and frothy foam. Delivers a
+                    bold
+                    coffee flavor with a velvety texture.</p>
+            </div>
+        </div>
+        <div class="menu-row">
+            <div class="menu-item">
+                <img src="mocha.jpg" alt="menu item">
+                <p id = "heading" >Cold Brew</p>
+                <p>Brewed slowly in cold water for a smooth, mellow flavor with less acidity. Served over ice for a
+                    refreshing, energizing drink on warm days.</p>
+            </div>
+            <div class="menu-item">
+                <img src="affogato.jpg" alt="menu item">
+                <p id = "heading" >Affogato</p>
+                <p> A dessert coffee made by pouring a shot of hot espresso over a scoop of vanilla ice cream or gelato.</p>
+            </div>
+            <div class="menu-item">
+                <img src="cappuccino.jpg" alt="menu item">
+                <p id = "heading" >Flat White</p>
+                <p>Similar to a latte but with a higher proportion of coffee to milk and a velvety texture.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact" id="contact">=
+        <div class="container">
+            <form>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:50px"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+STYLE.css
+body {
+    font-family: 'PT Serif', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f3e8;
+    color: #311d1a;
+}
+
+header {
+    background-color: rgb(43, 38, 38);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('coffee-back2.jpg') no-repeat center center/cover;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-overlay {
+    text-align: center;
+    color: white;
+}
+
+.text-overlay h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.text-overlay p {
+    font-size: 24px;
+    margin: 10px 0 0;
+}
+
+.services,
+.team,
+.menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 20px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.service-item,
+.team-item,
+.menu-item {
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+}
+
+.service-item img,
+.team-item img{
+    max-width: 100%;
+    height: 75%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+.menu-item img {
+    width: 100%; /* Ensures the image fills its container */
+    height: 700px; /* Maintains aspect ratio */
+    display: block; /* Ensures no extra spacing around images */
+    border:2px solid rgb(122, 48, 48);
+    border-radius: 10px;
+}
+
+#heading{
+    font-size: 30px;
+    color:rgb(211, 147, 62);
+    text-decoration: underline;
+}
+
+.service-item img:hover,
+.team-item img:hover,
+.menu-item img:hover {
+    opacity: 0.7;
+}
+
+.service-item p,
+.menu-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #3e2723;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-left: 20px;
+    margin-bottom: 16px;
+    margin-right: 20px;
+    resize: vertical;
+    font-size: 1rem;
+}
+
+input[type=submit] {
+    padding: 10px;
+    background-color: #311d1a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: rgb(66, 66, 66);
+}
+
+form label {
+    margin-left: 20px;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 20px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
