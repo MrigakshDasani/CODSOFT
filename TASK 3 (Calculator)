@@ -7,7 +7,7 @@ This project requires some skill but can be done with basic knowledge of these t
 
 
 
-# HTML and Inline JS code
+# HTML code
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,60 +22,75 @@ This project requires some skill but can be done with basic knowledge of these t
     <div class="container">
         <div class="calculator">
             <div class="display">
-                <input type="text" id="display" disabled>
+                <input type="text" id="display" placeholder="" disabled>
             </div>
             <div class="buttons">
-                <input type="button" value="7" onclick="appendNumber('7')">
-                <input type="button" value="8" onclick="appendNumber('8')">
-                <input type="button" value="9" onclick="appendNumber('9')">
-                <input type="button" value="+" onclick="appendOperator('+')">
-                <input type="button" value="4" onclick="appendNumber('4')">
-                <input type="button" value="5" onclick="appendNumber('5')">
-                <input type="button" value="6" onclick="appendNumber('6')">
-                <input type="button" value="-" onclick="appendOperator('-')">
-                <input type="button" value="1" onclick="appendNumber('1')">
-                <input type="button" value="2" onclick="appendNumber('2')">
-                <input type="button" value="/" onclick="appendOperator('/')">
-                <input type="button" value="*" onclick="appendOperator('*')">
-                <input type="button" value="3" onclick="appendNumber('3')">
-                <input type="button" value="0" onclick="appendNumber('0')" class="zero">
-                <input type="button" value="." onclick="appendNumber('.')">
-                <input type="button" value="AC" onclick="clearDisplay()" class="clear">
-                <input type="button" value="=" onclick="calculate()" class="equal">
+                <input type="button" value="7">
+                <input type="button" value="8">
+                <input type="button" value="9">
+                <input type="button" value="+" class="operator">
+                <input type="button" value="4">
+                <input type="button" value="5">
+                <input type="button" value="6">
+                <input type="button" value="-" class="operator">
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value="3">
+                <input type="button" value="/" class="operator">
+                <input type="button" value="0" class="zero">
+                <input type="button" value="." class="decimal">
+                <input type="button" value="*" class="operator">
+                <input type="button" value="AC" class="clear">
+                <input type="button" value="=" class="equal">
             </div>
         </div>
     </div>
-
-    <script>
-        const display = document.getElementById('display');
-
-        function appendNumber(number) {
-            display.value += number;
-        }
-
-        function appendOperator(operator) {
-            display.value += ` ${operator} `;
-        }
-
-        function clearDisplay() {
-            display.value = '';
-        }
-
-        function calculate() {
-            try {
-                display.value = eval(display.value);
-            } catch {
-                display.value = 'Error';
-            }
-        }
-    </script>
+    <script src="calc.js"></script>
 </body>
 
 </html>
 
 
+# JS CODE
+document.addEventListener('DOMContentLoaded', function() {
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('.buttons input');
 
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const value = button.value;=
+            if (value === 'AC') {
+                clearDisplay();
+            } else if (value === '=') {
+                calculate();
+            } else if (['+', '-', '*', '/'].includes(value)) {
+                appendOperator(value);
+            } else {
+                appendNumber(value);
+            }
+        });
+    });
 
+    function appendNumber(number) {
+        display.value += number;
+    }
+
+    function appendOperator(operator) {
+        display.value += ` ${operator} `;
+    }
+
+    function clearDisplay() {
+        display.value = '';
+    }
+
+    function calculate() {
+        try {
+            display.value = eval(display.value);
+        } catch {
+            display.value = 'Error';
+        }
+    }
+});
 
 
 
